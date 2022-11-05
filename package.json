@@ -1,6 +1,6 @@
 {
   "name": "mybudget",
-  "homepage": "https://github.com/Samwa-ua/mybudget",
+  "homepage": "https://samwa-ua.github.io/mybudget",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,9 +20,9 @@
     "autoprefixer": "10.4.5"
   },
   "scripts": {
-    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
