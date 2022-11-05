@@ -2,10 +2,12 @@ import React, { useContext } from "react";
 import { v4 as uuidV4 } from "uuid";
 import useLocalStorage from "../hooks/useLocalStorage";
 
-const BudgetContext = React.createContext();
+const BudgetsContext = React.createContext();
+
+export const UNCATEGORIZED_BUDGET_ID = "Uncategorized";
 
 export function useBudgets() {
-  return useContext(BudgetContext);
+  return useContext(BudgetsContext);
 }
 
 export const BudgetsProvider = ({ children }) => {
@@ -41,7 +43,7 @@ export const BudgetsProvider = ({ children }) => {
   }
 
   return (
-    <BudgetContext.Provider
+    <BudgetsContext.Provider
       value={{
         budgets,
         expenses,
@@ -53,6 +55,6 @@ export const BudgetsProvider = ({ children }) => {
       }}
     >
       {children}
-    </BudgetContext.Provider>
+    </BudgetsContext.Provider>
   );
 };

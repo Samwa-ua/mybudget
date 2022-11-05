@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, ProgressBar, Stack } from "react-bootstrap";
 import { currencyFormatter } from "../utils/currencyFormatter";
 
-const BudgetCard = ({ name, amount, max, gray }) => {
+const BudgetCard = ({ name, amount, max, gray, onAddExpenseClick }) => {
   const classNames = [];
   if (amount > max) {
     classNames.push("bg-danger", "bg-opacity-10");
@@ -10,7 +10,7 @@ const BudgetCard = ({ name, amount, max, gray }) => {
     classNames.push("bg-light");
   }
 
-  const getProgressBarVarian = (amount, max) => {
+  const getProgressBarVariant = (amount, max) => {
     const ratio = amount / max;
     if (ratio < 0.5) return "primary";
     if (ratio < 0.75) return "warning";
@@ -24,21 +24,23 @@ const BudgetCard = ({ name, amount, max, gray }) => {
           <div className="d-flex align-items-baseline">
             {currencyFormatter.format(amount)}
             <span className="text-muted fs-6 ms-1">
-              {" "}
               / {currencyFormatter.format(max)}
             </span>
           </div>
         </Card.Title>
         <ProgressBar
           className="rounded-pill"
-          variant={getProgressBarVarian(amount, max)}
+          variant={getProgressBarVariant(amount, max)}
           min={0}
           max={max}
           now={amount}
-          //   label={`${max / amount}%`}
         />
         <Stack direction="horizontal" gap="2" className="mt-4">
-          <Button variant="outline-primary" className="ms-auto">
+          <Button
+            variant="outline-primary"
+            className="ms-auto"
+            onClick={onAddExpenseClick}
+          >
             Add Expense
           </Button>
           <Button variant="outline-secondary">View Expense</Button>
