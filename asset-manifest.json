@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Samwa-ua/mybudget/static/css/main.c7c3163b.css",
+    "main.js": "/Samwa-ua/mybudget/static/js/main.c94687f7.js",
+    "index.html": "/Samwa-ua/mybudget/index.html",
+    "main.c7c3163b.css.map": "/Samwa-ua/mybudget/static/css/main.c7c3163b.css.map",
+    "main.c94687f7.js.map": "/Samwa-ua/mybudget/static/js/main.c94687f7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c7c3163b.css",
+    "static/js/main.c94687f7.js"
+  ]
+}
